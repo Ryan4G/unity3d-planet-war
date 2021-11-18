@@ -20,11 +20,21 @@ public class DamageTaking : MonoBehaviour
         {
             Debug.Log(gameObject.name + " destroyed!");
 
+            if (gameObject.tag.CompareTo("Asteroid") == 0)
+            {
+                GameManager.Instance.asteroids.Remove(gameObject);
+            }
+
             Destroy(gameObject);
 
             if (destructionPrefab != null)
             {
                 Instantiate(destructionPrefab, transform.position, transform.rotation);
+            }
+
+            if (gameOverOnDestroyed)
+            {
+                GameManager.Instance.GameOver();
             }
         }
     }

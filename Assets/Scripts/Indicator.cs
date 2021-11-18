@@ -49,7 +49,7 @@ public class Indicator : MonoBehaviour
 
             var distance = Vector3.Magnitude(showDistanceTo.position - target.position);
 
-            distanceLabel.text = $"{distance}m";
+            distanceLabel.text = $"{distance:F0}m";
         }
         else
         {

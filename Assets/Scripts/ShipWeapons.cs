@@ -19,7 +19,7 @@ public class ShipWeapons : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            InputManager.Instance.RemoveWeapons(this);
+            InputManager.Instance?.RemoveWeapons(this);
         }
     }
 
@@ -33,6 +33,13 @@ public class ShipWeapons : MonoBehaviour
         var firePointToUse = firePoints[firePointIndex];
 
         Instantiate(shotPrefab, firePointToUse.position, firePointToUse.rotation);
+
+        var audio = firePointToUse.GetComponent<AudioSource>();
+
+        if (audio)
+        {
+            audio.Play();
+        }
 
         firePointIndex++;
 

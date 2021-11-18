@@ -10,7 +10,8 @@ public class DamageOnCollide : MonoBehaviour
 
     private void HitObject(GameObject theObject)
     {
-        var theirDamage = theObject.GetComponent<DamageTaking>();
+        // The space staion included
+        var theirDamage = theObject.GetComponentInParent<DamageTaking>();
         if (theirDamage)
         {
             theirDamage.TakeDamage(damage);
@@ -20,17 +21,20 @@ public class DamageOnCollide : MonoBehaviour
 
         if (ourDamage)
         {
+            Debug.Log($"{ourDamage.name} Damage To Self");
             ourDamage.TakeDamage(damageToSelf);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"{other.gameObject.name} trigger");
         HitObject(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log($"{collision.gameObject.name} collision");
         HitObject(collision.gameObject);
     }
 

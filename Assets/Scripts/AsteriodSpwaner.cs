@@ -16,6 +16,8 @@ public class AsteriodSpwaner : MonoBehaviour
 
     public bool spwanAsteriods = false;
 
+    public int maxAsteriods = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,10 @@ public class AsteriodSpwaner : MonoBehaviour
 
             yield return new WaitForFixedUpdate();
 
-            CreateNewAsteriods();
+            if (GameManager.Instance.asteroids.Count < maxAsteriods)
+            {
+                CreateNewAsteriods();
+            }
         }
     }
 
@@ -54,6 +59,8 @@ public class AsteriodSpwaner : MonoBehaviour
         newAsteriod.transform.position = asteriodPosition;
 
         newAsteriod.transform.LookAt(target);
+
+        GameManager.Instance.asteroids.Add(newAsteriod.gameObject);
     }
 
     private void OnDrawGizmosSelected()
