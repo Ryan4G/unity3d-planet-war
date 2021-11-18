@@ -597,6 +597,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 955947122836847521}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087463503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087463505}
+  - component: {fileID: 1087463504}
+  m_Layer: 0
+  m_Name: Asteriod Spwaner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1087463504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087463503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e816dff76da4e499347a00d548c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 250
+  asteriodPrefab: {fileID: 814673658452920344, guid: ace1b8ba2debfef4dac0d0f0fa08b9d1,
+    type: 3}
+  spwanRate: 5
+  variance: 1
+  target: {fileID: 1474527802}
+  spwanAsteriods: 1
+--- !u!4 &1087463505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087463503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175236692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474527802}
   - component: {fileID: 1474527803}
+  - component: {fileID: 1474527804}
   m_Layer: 0
   m_Name: Space Station
   m_TagString: Untagged
@@ -1084,6 +1135,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb33909050f5c44683b7178f82ff7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1474527804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474527801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83058de61dfdd749a4eefb01c931e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 10
+  destructionPrefab: {fileID: 0}
+  gameOverOnDestroyed: 1
 --- !u!1 &1573152801
 GameObject:
   m_ObjectHideFlags: 0

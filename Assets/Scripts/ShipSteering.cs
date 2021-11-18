@@ -22,7 +22,7 @@ public class ShipSteering : MonoBehaviour
         var rotation = new Vector2();
 
         rotation.y = steeringInput.x;
-        rotation.x = steeringInput.y;
+        rotation.x = -steeringInput.y;
 
         rotation *= turnRate;
 
