@@ -10,6 +10,19 @@ public class ShipWeapons : MonoBehaviour
 
     private int firePointIndex;
 
+    public void Awake()
+    {
+        InputManager.Instance.SetWeapons(this);
+    }
+
+    public void OnDestroy()
+    {
+        if (Application.isPlaying)
+        {
+            InputManager.Instance.RemoveWeapons(this);
+        }
+    }
+
     public void Fire()
     {
         if (firePoints.Length == 0)
@@ -25,7 +38,7 @@ public class ShipWeapons : MonoBehaviour
 
         if (firePointIndex >= firePoints.Length)
         {
-            firePointIndex++;
+            firePointIndex = 0;
         }
     }
 
